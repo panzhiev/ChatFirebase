@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
             // Start sign in/sign up activity
@@ -141,8 +142,16 @@ public class MainActivity extends AppCompatActivity {
                                     "You have been signed out.",
                                     Toast.LENGTH_LONG)
                                     .show();
+
+                            // Start sign in/sign up activity
+                            startActivityForResult(
+                                    AuthUI.getInstance()
+                                            .createSignInIntentBuilder()
+                                            .build(),
+                                    SIGN_IN_REQUEST_CODE
+                            );
                             // Close activity
-                            finish();
+//                            finish();
                         }
                     });
         }

@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view_image"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardElevation="1dp"
     card_view:cardBackgroundColor="#ffffff"
     card_view:cardCornerRadius="5dp">
 
